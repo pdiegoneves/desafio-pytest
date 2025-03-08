@@ -9,4 +9,4 @@ def test_ola_vazio():
 def test_ola_joao():
     context = "João"
     received = ola(context)
-    assert received == f"Olá, João!"
+    assert received == "Olá, João!"
