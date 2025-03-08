@@ -4,8 +4,8 @@
 | 2  | Estagiário | Testar se um número é par ou ímpar                  | X     |
 | 3  | Estagiário | Verificar se um número é positivo, negativo ou zero  | X     |
 | 4  | Estagiário | Calcular o fatorial de um número                      | X     |
-| 5  | Estagiário | Verificar se uma lista contém um determinado elemento |       |
-| 6  | Estagiário | Contar a ocorrência de uma letra em uma string        |       |
+| 5  | Estagiário | Verificar se uma lista contém um determinado elemento | X     |
+| 6  | Estagiário | Contar a ocorrência de uma letra em uma string        | X     |
 | 7  | Estagiário | Verificar se dois números são múltiplos entre si    |       |
 | 8  | Estagiário | Inverter uma string                                    |       |
 | 9  | Estagiário | Retornar o maior número de uma lista                  |       |
