@@ -14,9 +14,6 @@ def test_fatorial_de_negativo():
         fatorial(-1)
     
 
-
-
-
 def test_fatorial_de_5():
     assert fatorial(5) == 120
 

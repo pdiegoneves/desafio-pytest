@@ -1,0 +1,106 @@
+PORRA, BOA PERGUNTA! Pro nível júnior, tem umas paradas DO CARALHO no pytest que vai fazer você parecer mais PROFISSA!
+
+Vamo atualizar o código com algumas funções MASSA:
+
+Python
+Copiar
+import pytest
+from roman_converter import RomanConverter
+
+@pytest.fixture
+def converter():
+    return RomanConverter()
+
+# Marca grupos de testes - ORGANIZAÇÃO É TUDO!
+@pytest.mark.basic
+@pytest.mark.parametrize("roman_number, expected", [
+    ("I", 1),
+    ("V", 5),
+    ("X", 10)
+])
+def test_basic_numbers(converter, roman_number, expected):
+    assert converter.to_integer(roman_number) == expected
+
+# Marca testes mais complexos
+@pytest.mark.complex
+@pytest.mark.parametrize("roman_number, expected", [
+    ("IV", 4),
+    ("IX", 9),
+    ("XLIV", 44)
+])
+def test_complex_numbers(converter, roman_number, expected):
+    assert converter.to_integer(roman_number) == expected
+
+# Skip com condição - MUITO FODA!
+@pytest.mark.skip(reason="Função ainda não implementada")
+def test_future_feature():
+    pass
+
+# Marca como teste que deve falhar - ÚTIL PRA CARALHO!
+@pytest.mark.xfail
+def test_known_bug(converter):
+    assert converter.to_integer("IIII") == 4  # Isso não é válido em romano
+
+# Testa se dá a exceção certa
+def test_invalid_input(converter):
+    with pytest.raises(ValueError, match="TEM CARACTERE INVÁLIDO NESSA PORRA!"):
+        converter.to_integer("ABC")
+
+
+Pra rodar essa BELEZINHA com as novas funções:
+
+Bash
+Copiar
+# Roda só os testes básicos
+pytest -v -m basic
+
+# Roda só os testes complexos
+pytest -v -m complex
+
+# Mostra os testes que pulou
+pytest -v -rs
+
+# Mostra os testes que falharam como esperado
+pytest -v -rx
+
+# Roda com relatório BONITÃO
+pytest -v --html=report.html
+
+
+FEATURES MASSA QUE ADICIONAMOS:
+
+@pytest.mark.basic e @pytest.mark.complex - Agrupa os testes
+@pytest.mark.skip - Pula teste que ainda não tá pronto
+@pytest.mark.xfail - Marca teste que você SABE que vai falhar
+pytest.raises com match - Verifica a mensagem de erro
+
+Pra usar o relatório HTML (STYLE PRA CARALHO):
+
+Bash
+Copiar
+pip install pytest-html
+pytest -v --html=report.html
+
+
+Como dizia meu mentor: "Teste é tipo desodorante, quanto mais você usa, menos merda você passa!"
+
+DICAS PRO JÚNIOR MANDAR BEM:
+
+Usa marcadores pra organizar os testes
+Documenta por que pulou um teste
+Testa as mensagens de erro
+Faz relatórios bonitos pra apresentar
+
+Quer que eu explique melhor alguma dessas paradas ou quer partir pra outro desafio? BORA CODAR! 🚀
+
+PS: Se quiser ser mais PROFISSA ainda, dá uma olhada no pytest.ini:
+
+Ini
+Copiar
+[pytest]
+markers =
+    basic: Testes de números romanos básicos
+    complex: Testes de números romanos complexos
+
+
+Isso documenta os marcadores e evita warnings! 😎
