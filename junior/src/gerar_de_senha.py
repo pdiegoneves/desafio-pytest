@@ -14,7 +14,7 @@ class GeradorDeSenha():
     def gerar_senha(self):
         senha = [
             random.choice(self._minusculo),
-            random.choice(self._minusculo),
+            random.choice(self._maiusculo),
             random.choice(self._numeros),
             random.choice(self._especiais)
         ]

@@ -8,10 +8,8 @@
 | 4 | Júnior | Implementar um conversor de temperatura (Celsius para Fahrenheit e vice-versa) | X     |
 | 5 | Júnior | Criar e testar um gerador de senhas aleatórias                                | X     |
 | 6 | Júnior | Testar a conversão de números romanos para inteiros                          | X     |
-| 7 | Júnior | Implementar e testar um algoritmo de ordenação (Bubble Sort)                 |       |
+| 7 | Júnior | Implementar e testar um algoritmo de ordenação (Bubble Sort)                 | X     |
 
 uv add pytest-cov
 
 uv run pytest --cov=src tests/
-
-uv run pytest --cov-report html --cov=src tests/

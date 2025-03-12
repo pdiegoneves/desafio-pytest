@@ -1,5 +1,5 @@
 import pytest
-from src.numero_comano import NumeroRomano
+from src.numero_romano import NumeroRomano
 
 @pytest.fixture
 def numero_romano_I():
