@@ -1,21 +1,26 @@
 import pytest
 from src.numero_romano import NumeroRomano
 
+
 @pytest.fixture
 def numero_romano_I():
     return NumeroRomano("I")
+
 
 @pytest.fixture
 def numero_romano_II():
     return NumeroRomano("II")
 
+
 @pytest.fixture
 def numero_romano_i():
     return NumeroRomano("i")
 
+
 @pytest.fixture
 def numero_romano_XI():
     return NumeroRomano("XI")
+
 
 @pytest.fixture
 def numero_romano_IX():
@@ -24,20 +29,25 @@ def numero_romano_IX():
 
 def test_I_e_numero_romano(numero_romano_I):
     assert isinstance(numero_romano_I, NumeroRomano)
-    
+
+
 def test_i_e_numero_romano(numero_romano_i):
     assert isinstance(numero_romano_i, NumeroRomano)
 
+
 def test_II_e_numero_romano(numero_romano_II):
     assert isinstance(numero_romano_II, NumeroRomano)
+
 
 def test_1_retorna_erro():
     with pytest.raises(ValueError, match="Número romano inválido"):
         NumeroRomano("1")
 
+
 def test_i1_retorna_erro():
     with pytest.raises(ValueError, match="Número romano inválido"):
         NumeroRomano("i1")
+
 
 def test_I_em_inteiro_e_1(numero_romano_I):
     assert numero_romano_I.em_inteiro() == 1

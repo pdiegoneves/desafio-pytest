@@ -4,6 +4,7 @@ def contar_letras(texto, letra):
     quantitade_letras = texto.count(letra)
     return quantitade_letras
 
+
 def contar_vogais(texto):
     texto = texto.lower()
     vogais = "aeiou"
@@ -13,5 +14,5 @@ def contar_vogais(texto):
         quantitade_vogais += texto.count(vogal)
 
     # quantitade_vogais = sum([texto.count(vogal) for vogal in vogais])
-    
+
     return quantitade_vogais

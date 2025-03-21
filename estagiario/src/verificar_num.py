@@ -5,4 +5,3 @@ def verificar_num(num):
         return "positivo"
     else:
         return "zero"
-    

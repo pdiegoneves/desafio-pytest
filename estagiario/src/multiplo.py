@@ -1,4 +1,4 @@
-def e_multiplo(nums:tuple)->bool:
+def e_multiplo(nums: tuple) -> bool:
     # num1, num2 = nums
     # return num2 % num1 == 0
 

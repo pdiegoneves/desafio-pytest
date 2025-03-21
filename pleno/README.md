@@ -3,7 +3,7 @@
 | #  | Nível | Desafio                                                                         | Feito |
 | -- | ------ | ------------------------------------------------------------------------------- | ----- |
 | 1  | Pleno  | Testar a conversão de números romanos para inteiros (Refatoração)           | X     |
-| 2  | Pleno  | Implementar e testar um algoritmo de ordenação (Bubble Sort) (Refatoração)  |       |
+| 2  | Pleno  | Implementar e testar um algoritmo de ordenação (Bubble Sort) (Refatoração)  | X     |
 | 3  | Pleno  | Criar e testar uma função para encontrar a mediana de uma lista de números   |       |
 | 4  | Pleno  | Implementar e testar um gerador de números da sequência de Fibonacci          |       |
 | 5  | Pleno  | Verificar se uma matriz é simétrica                                           |       |
