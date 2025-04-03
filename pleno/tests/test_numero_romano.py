@@ -1,4 +1,5 @@
 import pytest
+
 from src.numero_romano import NumeroRomano
 
 
@@ -73,3 +74,75 @@ def test_criar_numero_romano_invalido(entrada, mensagem_erro):
 )
 def test_varias_convercoes_3(romano, inteiro):
     assert NumeroRomano(romano).em_inteiro() == inteiro
+
+
+@pytest.mark.imprimir
+def test_imprimir_I_deve_imprimir_1(numero_romano_I, capsys):
+    numero_romano_I.imprimir()
+    resultado = capsys.readouterr()
+    assert resultado.out == "1\n"
+
+
+# Funcional
+
+
+@pytest.fixture
+def configuracao_funcional():
+    import subprocess
+
+    # Executar o comando através do shell
+    comando = [
+        r"C:\Pessoal\git\desafio-pytest\pleno\.venv\Scripts\python.exe",
+        r"C:\Pessoal\git\desafio-pytest\pleno\src\numero_romano.py",
+        "V",
+    ]
+
+    # Capturar a saída do comando
+    resultado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True,
+        check=False,  # Não levantar exceção em caso de código de saída diferente de zero
+    )
+
+    return resultado
+
+
+@pytest.fixture
+def configuracao_funcional_erro():
+    import subprocess
+
+    # Executar o comando através do shell
+    comando = [
+        r"C:\Pessoal\git\desafio-pytest\pleno\.venv\Scripts\python.exe",
+        r"C:\Pessoal\git\desafio-pytest\pleno\src\numero_romano.py",
+        "5",
+    ]
+
+    # Capturar a saída do comando
+    resultado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    return resultado
+
+
+@pytest.mark.funcional
+def test_script_executado_com_sucesso(configuracao_funcional):
+    resultado = configuracao_funcional
+    assert resultado.returncode == 0, f"Erro ao executar o comando: {resultado.stderr}"
+
+
+@pytest.mark.funcional
+def test_usando_argumento_V_retorna_5(configuracao_funcional):
+    resultado = configuracao_funcional
+    assert resultado.stdout.strip() == "5"
+
+
+@pytest.mark.funcional
+def test_usando_argumento_5_retorna_erro(configuracao_funcional_erro):
+    resultado = configuracao_funcional_erro
+    assert "Número romano inválido" in resultado.stderr
