@@ -1,0 +1,24 @@
+[project]
+name = "todo-django-ninja"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.2",
+    "django-ninja>=1.4.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-django>=4.11.1",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "todo_djn.settings"
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
+filterwarnings = [
+    "ignore:Converter 'uuid' is already registered",
+    "ignore:Support for class-based `config`",
+]
